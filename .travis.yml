@@ -13,15 +13,18 @@ notifications:
 install:
   - npm ci # faster, goes only from package-lock
 before_script:
-  - psql -c 'create database "boilermaker-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
+  - psql -c 'create database "infinity-mirror-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 script:
   - npm test # test the code
   - npm run build-client # make the bundle
-# before_deploy:
-#   - rm -rf node_modules # omit from the tarball, since we skip cleanup
-# deploy:
-#   skip_cleanup: true # prevents travis from deleting the build
-#   provider: heroku
-#   app: YOUR-HEROKU-APP-NAME-HERE # see README
-#   api_key:
-#     secure: YOUR-***ENCRYPTED***-API-KEY-HERE # see README
+before_deploy: # omit node_modules, since we set skip_cleanup below
+  - rm -rf node_modules
+deploy: # see README for details on these keys
+  # prevents travis from deleting the build
+  skip_cleanup: true
+  provider: heroku
+  # app should be your heroku app name; see README
+  app: infinity-table
+  # the secure key indicates an encrypted value; see README
+  api_key:
+    secure: ST0n9adYucN68EnMLCZBJigFWxGke0s+dPAuofoWPwPxvAR4Ps3ezTs4VoJBmj1zvAwOlWVBlH2TU9/mNnpqej7vCFGmJWQm9e6wiHPMOSkUFazLiAGoZx3o4om9uNj3C29XqTuAaRTqicteLoMo+6WkxBhNKatPFYVNoLrR/vtYGXTvY3iTwIsNLEd/oO/Ti1Ch8Su6gxpgNzjx4CuJ07PfBzpwzAwXH7rxta2Ro/OJUpSsRcZYE3QCdpapUINg6EjxRgSL0/Qc/mIb0cp7ysynenbv6ebASUPGjJOADnFb73QRDpDtvqtI/CraqP6KrpQswD9YMnumc7++1PlZhahZrcVjVuZh0eZ94Wngan2PhG/roTZePuxewUNJjYEzpc1VuBEXws1x12mDZ/ZZgGDy0YMEVnj7LG6KIRm1okNmSML7M7PZZxn3cCLkhEsKjWfgjPAfdenFfmp3BacI/vEOlFPwOIaCTbmbbxbwoxZo4URlwsMC0U0XDiSPjW/QvWuW9wmuO/TYr27qGYak1bk/opjfEULZ55WcrKdgZyjM0mlVug261ecbwq01o9YNdM1QZf/GkkncvF13nz7Rb7gx9YJr6UGHa4XPf9QOkrbDH+x4OEFZdEUzLx3Li7ZMsPL6Ru+UAYkvI5m/A9y7QIylmqGT6EhcFZA+IGCnsrs=
