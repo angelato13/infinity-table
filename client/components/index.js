@@ -5,4 +5,8 @@
  */
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
+export {default as LEDs} from './leds'
+export {default as ColorPicker} from './colorPicker'
+export {default as InfinityMirror} from './infinity-mirror'
+export {default as SingleLED} from './single-led'
 export {Login, Signup} from './auth-form'
