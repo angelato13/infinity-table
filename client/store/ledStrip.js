@@ -15,7 +15,7 @@ function createDefaultStrip(n, color) {
   return strip
 }
 
-const defaultLEDStrip = createDefaultStrip(10, '#000000')
+const defaultLEDStrip = createDefaultStrip(180, '#000000')
 
 /**
  * ACTION CREATORS

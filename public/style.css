@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
+  background-color: black;
+  color: white;
 }
 
 h1 {
@@ -10,6 +12,7 @@ h1 {
 
 a {
   text-decoration: none;
+  color: lightblue;
 }
 
 label {
@@ -36,13 +39,29 @@ form div {
 .led {
   display: flex;
   flex-direction: row;
-  border: 2px solid lightgray;
-  margin: 5px;
-  min-height: 20px;
-  min-width: 20px;
+  border: 1px solid gray;
+  margin: 1px;
+  min-height: 10px;
+  min-width: 10px;
 }
 
 .break {
   flex-basis: 100%;
   height: 0;
+}
+
+button {
+  background-color: rgb(7, 88, 116);
+  margin: 10px;
+  border: none;
+  color: lightblue;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer {
+  width: 750px;
 }
