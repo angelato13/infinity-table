@@ -26,8 +26,8 @@ class LEDs extends React.Component {
         >
           Change All
         </button>
-        <button type="button"> Marquee </button>
-        <button type="button"> Rainbow </button>
+        {/* <button type="button"> Marquee </button>
+        <button type="button"> Rainbow </button> */}
         <div className="break" />
         <div className="break" />
         <div className="top">

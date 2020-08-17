@@ -17,10 +17,16 @@ class SingleLED extends React.Component {
     let singleLed = this.props.singleLed
 
     return (
-      <div className="content-container">
-        <button type="button" onClick={() => this.handleClick(singleLed)}>
-          Turn LED ON / OFF
-        </button>
+      <div>
+        <h4>Change it up!</h4>
+        <h6>
+          Note: Changes will only carry over to LEDs if on the same network
+        </h6>
+        <div className="content-container">
+          <button type="button" onClick={() => this.handleClick(singleLed)}>
+            Turn LED ON / OFF
+          </button>
+        </div>
       </div>
     )
   }
