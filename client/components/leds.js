@@ -30,19 +30,21 @@ class LEDs extends React.Component {
         <button type="button"> Rainbow </button>
         <div className="break" />
         <div className="break" />
-        {ledStrip.map((led, i) => {
-          if (i < topLen)
-            return (
-              <div
-                key={i}
-                className="led"
-                style={{background: led}}
-                onClick={() => this.handleClick(colorPicker, i)}
-              >
-                {' '}
-              </div>
-            )
-        })}
+        <div className="top">
+          {ledStrip.map((led, i) => {
+            if (i < topLen)
+              return (
+                <div
+                  key={i}
+                  className="led"
+                  style={{background: led}}
+                  onClick={() => this.handleClick(colorPicker, i)}
+                >
+                  {' '}
+                </div>
+              )
+          })}
+        </div>
         <div className="break" />
         <div className="side">
           <div className="leftside">
@@ -78,19 +80,21 @@ class LEDs extends React.Component {
           </div>
         </div>
         <div className="break" />
-        {ledStrip.map((led, i) => {
-          if (i >= topLen + sideLen && i < 2 * topLen + sideLen)
-            return (
-              <div
-                key={i}
-                className="led"
-                style={{background: led}}
-                onClick={() => this.handleClick(colorPicker, i)}
-              >
-                {' '}
-              </div>
-            )
-        })}
+        <div className="bottom">
+          {ledStrip.map((led, i) => {
+            if (i >= topLen + sideLen && i < 2 * topLen + sideLen)
+              return (
+                <div
+                  key={i}
+                  className="led"
+                  style={{background: led}}
+                  onClick={() => this.handleClick(colorPicker, i)}
+                >
+                  {' '}
+                </div>
+              )
+          })}
+        </div>
       </div>
     )
   }
